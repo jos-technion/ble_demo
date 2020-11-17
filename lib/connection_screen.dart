@@ -13,13 +13,8 @@ class _ConnectionScreenState extends State<ConnectionScreen> {
   BLEManager manager = BLEManager.instance;
 
   void gotPeripheral(BluetoothDevice p) {
-    if (!devices.contains(Device(p))) {
-      setState(() {
-        devices.add(Device(p));
-      });
-    } else {
-      print('already exist');
-    }
+    //TODO: add device
+    // add device to the list only if it doesn't exist
   }
 
   @override
@@ -46,7 +41,7 @@ class _ConnectionScreenState extends State<ConnectionScreen> {
             FlatButton(
               child: Text('stop scan'),
               onPressed: () {
-                manager.stopScan();
+                //TODO: stop scan
               },
             ),
             Expanded(
@@ -60,9 +55,7 @@ class _ConnectionScreenState extends State<ConnectionScreen> {
                         ? null
                         : Text(devices[idx].peripheral.name),
                     onTap: () async {
-                      manager.connect(devices[idx].peripheral);
-                      int count = 0;
-                      Navigator.pop(context);
+                      //TODO: connect to the device and return to main screen
                       return;
                     },
                   );

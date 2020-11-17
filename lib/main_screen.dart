@@ -5,7 +5,7 @@ import 'connection_screen.dart';
 
 class MainScreen extends StatelessWidget {
   static final id = 'main_screen_id';
-
+  //TODO: add a timer, and read the steps every 2.5 seconds
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,6 +30,7 @@ class MainScreen extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.only(left: 100.0, right: 100),
             child: ListTile(
+              //TODO: update class name and number of steps
               title: Text('Sitting'),
               trailing: Text('12 steps'),
             ),
