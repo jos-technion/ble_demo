@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 import 'services/ble_manager.dart';
 import 'connection_screen.dart';
 
@@ -11,22 +10,20 @@ class MainScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
           title: Text('BLE Demo'),
-          leading: Provider.of<BLEManager>(context, listen: true).isConnected
+          leading: //TODO: check whether we are connected or not
               ? Icon(Icons.bluetooth_connected)
               : Icon(Icons.bluetooth_disabled)),
       body: Column(
         children: [
           FlatButton(
               onPressed: () {
-                if (BLEManager.instance.isConnected) {
+                if (//TODO: update the code ) {
                   BLEManager.instance.disconnect();
                 } else {
                   Navigator.pushNamed(context, ConnectionScreen.id);
                 }
               },
-              child: Provider.of<BLEManager>(context, listen: true).isConnected
-                  ? Text('Disconnect')
-                  : Text('Connect')),
+              child: //TODO Text should be disconnect or connect
           Padding(
             padding: const EdgeInsets.only(left: 100.0, right: 100),
             child: ListTile(
